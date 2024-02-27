@@ -1,4 +1,6 @@
 # Kubernetes Multi-Cluster Platform Project
+<!-- [MermaidChart: f0a3e18e-7f18-4634-8821-0b6b929f109a] -->
+<!-- Check or Edit diagram from above.  MermaidJS plugin is required -->
 
 ## Overview
 

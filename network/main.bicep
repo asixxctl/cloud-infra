@@ -4,6 +4,7 @@ param location string = 'westus2'
 param rgName string = 'kainetworkrg'
 @description('Specifies the vnetName name.')
 param virtualNetworkName string = 'kainetwork'
+param sshKey string = 'sshkey'
 
 // ============ main.bicep ==========
 targetScope = 'subscription'
@@ -23,5 +24,22 @@ module virtualNetwork '../core/network/virtualnetwork.bicep' = {
     virtualNetworkName: virtualNetworkName
     subnetName: 'subnet1'
     location: resourceGroup.location
+  }
+}
+
+
+// Creating compute resourceg group
+@description('Creates compute resourcegroup')
+resource computeResourceGroup 'Microsoft.Resources/resourceGroups@2023-07-01' = {
+  name: 'kai-compute'
+  location: location 
+}
+
+module aks '../core/containers/kubernetes.bicep' = {
+  scope: computeResourceGroup
+  name: 'kaiks'
+  params: {
+    sshKey: sshKey
+    location: location
   }
 }
