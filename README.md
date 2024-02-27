@@ -1,7 +1,7 @@
 # Kubernetes Multi-Cluster Platform Project
 <!-- [MermaidChart: f0a3e18e-7f18-4634-8821-0b6b929f109a] -->
 <!-- Check or Edit diagram from above.  MermaidJS plugin is required -->
-<img src="https://github.com/asixxctl/cloud-infra/blob/main/assets/images/Multiclusterrouting.png" width="100">
+<img src="https://github.com/asixxctl/cloud-infra/blob/main/assets/images/Multiclusterrouting.png" width="300">
 
 ## Overview
 
