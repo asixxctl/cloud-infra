@@ -1,5 +1,5 @@
 # Kubernetes Multi-Cluster Platform Project
-<img src="https://github.com/asixxctl/cloud-infra/blob/main/assets/images/kubernetes_multi_cluster_architecture.png" width="500">
+<img src="https://github.com/asixxctl/cloud-infra/blob/main/assets/kubernetes_multi_cluster_architecture.png" width="500">
 
 ## Overview
 
