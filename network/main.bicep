@@ -7,6 +7,7 @@ param virtualNetworkName string = 'kainetwork'
 param sshKey string = 'sshkey'
 
 // ============ main.bicep ==========
+// IMPORTANT>>>>>> STILL WIP>> CURRENTLY HOLDS BOTH NETWORKING AND COMPUTE !!!!! WILL REFACTOR LATER
 targetScope = 'subscription'
 
 // Creating resource group
@@ -35,9 +36,20 @@ resource computeResourceGroup 'Microsoft.Resources/resourceGroups@2023-07-01' = 
   location: location 
 }
 
-module aks '../core/containers/kubernetes.bicep' = {
+//Create West1 cluster
+module w1 '../core/containers/kubernetes.bicep' = {
   scope: computeResourceGroup
-  name: 'kaiks'
+  name: 'aksw1'
+  params: {
+    sshKey: sshKey
+    location: location
+  }
+}
+
+//Create West2 Cluster
+module w2 '../core/containers/kubernetes.bicep' = {
+  scope: computeResourceGroup
+  name: 'aksw2'
   params: {
     sshKey: sshKey
     location: location
